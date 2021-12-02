@@ -1,0 +1,120 @@
+@font-face {
+    font-family: MouseoSans-Regular;
+    src: url("../fonts/MouseoSans/MuseoSans-Regular.ttf")
+}
+
+@font-face {
+    font-family: MouseoSans-Bold;
+    src: url("../fonts/MouseoSans/MuseoSans-Bold.ttf")
+}
+
+@font-face {
+    font-family: MouseoSans-Light;
+    src: url("../fonts/MouseoSans/MuseoSans-Light.ttf")
+}
+
+@font-face {
+    font-family: MouseoSans-Medium;
+    src: url("../fonts/MouseoSans/MuseoSans-Medium.ttf")
+}
+
+@font-face {
+    font-family: MouseoSans-Black;
+    src: url("../fonts/MouseoSans/MuseoSans-Black.ttf")
+}
+
+body {
+    background-color: #fff;
+    overflow-x: hidden !important;
+    height: 100%;
+    margin: 0
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: MouseoSans-Bold;
+}
+
+a, button, label {
+    font-family: MouseoSans-Medium;
+    cursor: pointer !important;
+}
+
+label, b {
+    font-family: MouseoSans-Medium;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+textarea:focus {
+    outline: none !important;
+}
+
+p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+p, span, ol, em, i, button {
+    font-family: MouseoSans-Regular;
+    font-size: 14px;
+}
+
+small {
+    font-size: 12px;
+}
+
+input {
+    font-family: MouseoSans-Regular;
+    outline: none;
+}
+
+textarea, small {
+    font-family: MouseoSans-Regular;
+}
+
+table {
+    width: 100%;
+}
+
+*::placeholder {
+    font-family: MouseoSans-Regular;
+}
+
+.bold {
+    font-family: MouseoSans-Bold;
+}
+
+.semi {
+    font-family: MouseoSans-Medium;
+}
+
+.h1 {
+    font-size: 40px;
+    font-family: MouseoSans-Bold;
+}
+
+.h2 {
+    font-size: 30px;
+    font-family: MouseoSans-Bold;
+}
+
+.h3 {
+    font-size: 22px;
+    font-family: MouseoSans-Medium;
+}
+
+.h4 {
+    font-size: 20px;
+    font-family: MouseoSans-Medium;
+}
+
+.h5, .h5 span {
+    font-size: 18px;
+    font-family: MouseoSans-Medium;
+}
+
+.rel {
+    position: relative;
+}
