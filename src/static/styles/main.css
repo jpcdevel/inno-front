@@ -24,7 +24,7 @@
 }
 
 body {
-    background-color: #fff;
+    background-color: #EBEBEB;
     overflow-x: hidden !important;
     height: 100%;
     margin: 0
@@ -117,4 +117,39 @@ table {
 
 .rel {
     position: relative;
+}
+
+.navbar {
+    width: 100%;
+    background: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    margin: 20px 20px;
+}
+
+.menu_item {
+    color: #000;
+    font-size: 16px;
+    text-decoration: none;
+    margin: 0 10px;
+    font-family: MouseoSans-Medium;
+}
+
+.menu_item_active {
+    font-family: MouseoSans-Bold;
+    color: #179691;
+}
+
+@media(min-width: 1024px) {
+    .navbar {
+        padding: 10px 90px;
+    }
+
+    .content {
+        margin: 25px 90px;
+    }
 }
