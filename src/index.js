@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
 import { ApolloProvider, ApolloClient, InMemoryCache, from, HttpLink } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
 import { setContext } from '@apollo/client/link/context';
+
+import AuthLayer from './components/auth/AuthLayer'
 
 // APOLLO CONFIGURATION
 const errorLink = onError(({ graphQLErrors, networkError }) => {
@@ -28,7 +29,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
 
 const link = from([
   errorLink,
-  new HttpLink({ uri: 'http://localhost:8000/graphql', credentials: 'include' }) // http://localhost:8000/graphql // https://lycnet4.herokuapp.com/graphql
+  new HttpLink({ uri: 'https://inno-tim.herokuapp.com/graphql', credentials: 'include' }) // http://localhost:8000/graphql // https://lycnet4.herokuapp.com/graphql
 ])
 
 
@@ -53,7 +54,9 @@ ReactDOM.render(
   <ApolloProvider client={client}>
         {" "}
         <React.StrictMode>
-              <App />
+              <AuthLayer>
+                <App />
+              </AuthLayer>
         </React.StrictMode>
     </ApolloProvider>,
   document.getElementById('root')

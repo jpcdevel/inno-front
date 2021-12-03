@@ -27,7 +27,8 @@ body {
     background-color: #EBEBEB;
     overflow-x: hidden !important;
     height: 100%;
-    margin: 0
+    margin: 0;
+    position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -119,7 +120,7 @@ table {
     position: relative;
 }
 
-.navbar {
+.navbar_main {
     width: 100%;
     background: #fff;
     padding: 10px 20px;
@@ -132,7 +133,7 @@ table {
 }
 
 .menu_item {
-    color: #000;
+    color: #000 !important;
     font-size: 16px;
     text-decoration: none;
     margin: 0 10px;
@@ -141,11 +142,217 @@ table {
 
 .menu_item_active {
     font-family: MouseoSans-Bold;
+    color: #179691 !important;
+}
+
+.loader {
+    position: fixed;
+    left: 0;
+    top: 70px;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    z-index: 1000;
+}
+
+.login_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: scroll;
+}
+
+.login_card {
+    margin: 20px;
+    padding: 100px 50px;
+    border: 1px solid #179691;
+    border-radius: 8px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.login_card:hover {
+    background: #179691;
+    color: #fff;
+}
+
+.defaultInput {
+    border: 1px solid #179691;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.defaultBtn {
+    border-radius: 4px;
+    padding: 5px 20px;
+    background: transparent;
+    border: 1px solid #179691;
+    font-family: MouseoSans-Medium;
+    font-size: 14px;
+    color: #179691;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.defaultBtn:hover {
+    background: #179691;
+    color: #fff;
+}
+
+.gallery {
+    display: flex;
+}
+
+.gallery_sidebar {
+    /* position: sticky; */
+}
+
+.filters {
+    background: #fff;
+    padding: 15px;
+}
+
+.superior_filter {
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+    cursor: pointer;
+}
+
+.superior_name {
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.filter_children {
+    margin-top: 10px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.filter_children:hover {
     color: #179691;
 }
 
+.rotate {
+    transform: rotate(180deg);
+}
+
+.filter_without_hover .filter_children:hover {
+    color: #000;
+}
+
+.filter_children_category {
+    margin-top: 10px;
+    max-width: 400px;
+}
+
+.filter_checkbox {
+    position: relative;
+    display: flex;
+    margin-top: 8px;
+}
+
+.filter_checkbox input {
+    transform: scale(1.5);
+    margin-top: 4px;
+    margin-left: 4px;
+}
+
+.checkboxLabel {
+    margin-left: 10px;
+}
+
+.startups {
+    margin-left: 15px;
+}
+
+.apply_area {
+    width: 100%;
+    background: #fff;
+    padding: 10px;
+}
+
+.search_startup_icon {
+    position: absolute;
+    right: 8px;
+    top: 4px;
+}
+
+.active_filter {
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.03), -2px 1px 3px rgba(0, 0, 0, 0.04);
+    border-radius: 13px;
+    padding: 2px 8px;
+    margin: 4px 0;
+    white-space: nowrap;
+}
+
+.startup {
+    width: 100%;
+    background: #fff;
+}
+
+.outline_btn {
+    background: #F5F5F5;
+    border: none;
+    border-radius: 4px;
+    color: #179691;
+    padding: 4px 20px;
+    font-family: MouseoSans-Medium;
+    max-height: 30px
+}
+
+.green {
+    color: #179691;
+    font-family: MouseoSans-Medium;
+    font-size: 16px;
+}
+
+.non_link {
+    color: #000 !important;
+    text-decoration: none;
+}
+
+.person {
+    background: linear-gradient(90.63deg, #EDF3F3 1.79%, rgba(242, 255, 254, 0.25) 99.8%);
+    border: 1px solid rgba(23, 150, 145, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.small_p {
+    font-size: 13px;
+    font-family: MouseoSans-Medium;
+}
+
+.file {
+    border-radius: 4px;
+    border: 1px solid #C4C4C4;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fileLink {
+    color: #000;
+    font-family: Montserrat-Regular;
+    text-underline: #000;
+}
+
+.fileLink:hover {
+    color: #000;
+}
+
 @media(min-width: 1024px) {
-    .navbar {
+    .navbar_main {
         padding: 10px 90px;
     }
 

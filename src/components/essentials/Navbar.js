@@ -6,9 +6,7 @@ import logo from '../../static/images/logo.svg'
 function Navbar() {
     const [path, setPath] = useState(window.location.pathname.split("/"))
     const [lastPath, setLastPath] = useState(window.location.pathname.split("/").pop())
-
     const loc = useLocation()
-    console.log(window.location.pathname.split("/").includes("my"))
 
     useEffect(() => {
         let pathTemp = window.location.pathname.split("/")
@@ -17,7 +15,7 @@ function Navbar() {
     }, [loc])
 
     return (
-        <div className="navbar">
+        <div className="navbar_main">
             <img src={logo} width="40px" />
 
             <Link 
@@ -41,6 +39,13 @@ function Navbar() {
                 className={lastPath == 'request' ? "menu_item menu_item_active" : "menu_item"}
             >
                 Запрос
+            </Link>
+
+            <Link 
+                to={"/logout"}
+                className="menu_item ms-auto"
+            >
+                Выйти
             </Link>
         </div>
     )
