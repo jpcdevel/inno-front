@@ -17,6 +17,7 @@ import ProtectedRoute from './utils/ProtectedRoute'
 import './static/styles/main.css'
 
 import { UserContext } from "./components/auth/AuthLayer";
+import Invitation from "./components/pages/Invitation";
 
 function App() {
   const { user } = useContext(UserContext)
@@ -47,6 +48,9 @@ function App() {
                           </ProtectedRoute>
                           <ProtectedRoute path="/my">
                               <Home />
+                          </ProtectedRoute>
+                          <ProtectedRoute path="/request">
+                              <Invitation />
                           </ProtectedRoute>
                           <Route path="/login">
                               <Login />
