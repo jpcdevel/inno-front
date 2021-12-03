@@ -1,12 +1,19 @@
-import React from 'react'
-import {Col, DatePicker, Input, Row, Button} from 'antd';
+import React, {useState} from 'react'
+import {Button, Col, DatePicker, Input, Row} from 'antd';
 import 'antd/dist/antd.css';
 
 function onChange(date, dateString) {
     console.log(date, dateString);
 }
 
+let is_field_disabled = false;
+
 function Invitation() {
+    const [isFieldDisabled, setIsFieldDisabled] = useState(false)
+    const sendRequest = () => {
+        alert("заявка отправлена")
+        setIsFieldDisabled(true)
+    }
     const layout = {
         labelCol: {span: 8},
         wrapperCol: {span: 16},
@@ -28,6 +35,7 @@ function Invitation() {
 
     const onFinish = (values: any) => {
         console.log(values);
+        alert("заявка отправлена")
     };
 
 
@@ -49,8 +57,9 @@ function Invitation() {
                     <h4>Описание проблемы</h4>
                 </div>
                 <div align="left" style={{display: "block; block;", width: "100%"}}>
-                    <Input.TextArea style={{border: "1px solid #179691",borderRadius: "4px", width: "100%"}}
-                        placeholder={"Опишите своими словами существующую в организации проблему. Можно сформулировать проблему в форму задачи"}/>
+                    <Input.TextArea disabled={isFieldDisabled}
+                                    style={{border: "1px solid #179691", borderRadius: "4px", width: "100%"}}
+                                    placeholder={"Опишите своими словами существующую в организации проблему. Можно сформулировать проблему в форму задачи"}/>
                 </div>
             </Row>
             <Row style={{paddingTop: "10px"}}>
@@ -58,8 +67,9 @@ function Invitation() {
                     <h4>Как проявляется ваша проблема?</h4>
                 </div>
                 <div align="left" style={{display: "block; block;", width: "100%"}}>
-                    <Input.TextArea style={{border: "1px solid #179691",borderRadius: "4px",width: "100%"}}
-                        placeholder={"Опишите своими словами существующую в организации проблему. Можно сформулировать проблему в форму задачи"}/>
+                    <Input.TextArea disabled={isFieldDisabled}
+                                    style={{border: "1px solid #179691", borderRadius: "4px", width: "100%"}}
+                                    placeholder={"Опишите своими словами существующую в организации проблему. Можно сформулировать проблему в форму задачи"}/>
                 </div>
             </Row>
             <Row style={{paddingTop: "10px"}}>
@@ -67,8 +77,9 @@ function Invitation() {
                     <h4>Как проявляется ваша проблема?</h4>
                 </div>
                 <div align="left" style={{display: "block; block;", width: "100%"}}>
-                    <Input.TextArea style={{border: "1px solid #179691",borderRadius: "4px",width: "100%"}}
-                        placeholder={"Опишите своими словами существующую в организации проблему. Можно сформулировать проблему в форму задачи"}/>
+                    <Input.TextArea disabled={isFieldDisabled}
+                                    style={{border: "1px solid #179691", borderRadius: "4px", width: "100%"}}
+                                    placeholder={"Опишите своими словами существующую в организации проблему. Можно сформулировать проблему в форму задачи"}/>
                 </div>
             </Row>
             <Row style={{paddingTop: "16px"}}>
@@ -77,7 +88,9 @@ function Invitation() {
                         <h4>Пробовали ли вы решать?</h4>
                     </div>
                     <div align="left" style={{display: "block; block;", width: "100%"}}>
-                        <Input style={{border: "1px solid #179691",borderRadius: "4px",width: "100%"}} placeholder={"Были ли попытки решения вашей проблемы"}></Input>
+                        <Input disabled={isFieldDisabled}
+                               style={{border: "1px solid #179691", borderRadius: "4px", width: "100%"}}
+                               placeholder={"Были ли попытки решения вашей проблемы"}></Input>
                     </div>
                 </Col>
                 <Col span={12}>
@@ -85,7 +98,9 @@ function Invitation() {
                         <h4>Желательный срок решения вашей проблемы?</h4>
                     </div>
                     <div align="left" style={{display: "block; block;", width: "100%"}}>
-                        <DatePicker style={{border: "1px solid #179691",borderRadius: "4px", width: "100%"}} onChange={onChange}/>
+                        <DatePicker disabled={isFieldDisabled} placeholder={"выберите дату..."}
+                                    style={{border: "1px solid #179691", borderRadius: "4px", width: "100%"}}
+                                    onChange={onChange}/>
                     </div>
                 </Col>
             </Row>
@@ -95,20 +110,30 @@ function Invitation() {
                     <h2>Как с вами связаться?</h2>
                 </div>
                 <div align="left" style={{display: "block; block;", width: "100%"}}>
-                    <Input style={{border: "1px solid #179691",borderRadius: "4px"}} placeholder={"Ваше ФИО"}></Input>
+                    <Input disabled={isFieldDisabled} style={{border: "1px solid #179691", borderRadius: "4px"}}
+                           placeholder={"Ваше ФИО"}></Input>
                 </div>
             </Row>
             <Row style={{paddingTop: "16px"}}>
                 <Col style={{paddingRight: "8px"}} span={12}>
-                    <Input  style={{border: "1px solid #179691",borderRadius: "4px"}} placeholder={"Контактный телефон"}></Input>
+                    <Input disabled={isFieldDisabled} style={{border: "1px solid #179691", borderRadius: "4px"}}
+                           placeholder={"Контактный телефон"}></Input>
                 </Col>
                 <Col span={12}>
-                    <Input style={{border: "1px solid #179691",borderRadius: "4px"}} placeholder={"Электронная почта"}></Input>
+                    <Input style={{border: "1px solid #179691", borderRadius: "4px"}}
+                           placeholder={"Электронная почта"}></Input>
                 </Col>
             </Row>
             <Row style={{paddingTop: "16px"}}>
-                <Button shape="round" type={"text"} style={{background: "#179691", fontWeight: "600",
-                    fontSize:"15px", color:"white", width:"307px" }}>Разместить заявку</Button>
+                <Button shape={"round"} disabled={isFieldDisabled} type={"text"}
+                        style={{
+                            background: "#179691",
+                            fontWeight: "600",
+                            fontSize: "15px",
+                            color: "white",
+                            width: "307px"
+                        }}
+                        onClick={sendRequest}>Разместить заявку</Button>
             </Row>
 
         </>
