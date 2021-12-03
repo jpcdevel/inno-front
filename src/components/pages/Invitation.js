@@ -49,7 +49,7 @@ function Invitation() {
                     <h4>Описание проблемы</h4>
                 </div>
                 <div align="left" style={{display: "block; block;", width: "100%"}}>
-                    <Input.TextArea
+                    <Input.TextArea style={{border: "1px solid #179691",borderRadius: "4px", width: "100%"}}
                         placeholder={"Опишите своими словами существующую в организации проблему. Можно сформулировать проблему в форму задачи"}/>
                 </div>
             </Row>
@@ -58,7 +58,7 @@ function Invitation() {
                     <h4>Как проявляется ваша проблема?</h4>
                 </div>
                 <div align="left" style={{display: "block; block;", width: "100%"}}>
-                    <Input.TextArea
+                    <Input.TextArea style={{border: "1px solid #179691",borderRadius: "4px",width: "100%"}}
                         placeholder={"Опишите своими словами существующую в организации проблему. Можно сформулировать проблему в форму задачи"}/>
                 </div>
             </Row>
@@ -67,7 +67,7 @@ function Invitation() {
                     <h4>Как проявляется ваша проблема?</h4>
                 </div>
                 <div align="left" style={{display: "block; block;", width: "100%"}}>
-                    <Input.TextArea
+                    <Input.TextArea style={{border: "1px solid #179691",borderRadius: "4px",width: "100%"}}
                         placeholder={"Опишите своими словами существующую в организации проблему. Можно сформулировать проблему в форму задачи"}/>
                 </div>
             </Row>
@@ -77,7 +77,7 @@ function Invitation() {
                         <h4>Пробовали ли вы решать?</h4>
                     </div>
                     <div align="left" style={{display: "block; block;", width: "100%"}}>
-                        <Input placeholder={"Были ли попытки решения вашей проблемы"}></Input>
+                        <Input style={{border: "1px solid #179691",borderRadius: "4px",width: "100%"}} placeholder={"Были ли попытки решения вашей проблемы"}></Input>
                     </div>
                 </Col>
                 <Col span={12}>
@@ -85,7 +85,7 @@ function Invitation() {
                         <h4>Желательный срок решения вашей проблемы?</h4>
                     </div>
                     <div align="left" style={{display: "block; block;", width: "100%"}}>
-                        <DatePicker style={{width: "100%"}} onChange={onChange}/>
+                        <DatePicker style={{border: "1px solid #179691",borderRadius: "4px", width: "100%"}} onChange={onChange}/>
                     </div>
                 </Col>
             </Row>
@@ -95,20 +95,20 @@ function Invitation() {
                     <h2>Как с вами связаться?</h2>
                 </div>
                 <div align="left" style={{display: "block; block;", width: "100%"}}>
-                    <Input placeholder={"Ваше ФИО"}></Input>
+                    <Input style={{border: "1px solid #179691",borderRadius: "4px"}} placeholder={"Ваше ФИО"}></Input>
                 </div>
             </Row>
             <Row style={{paddingTop: "16px"}}>
                 <Col style={{paddingRight: "8px"}} span={12}>
-                    <Input placeholder={"Контактный телефон"}></Input>
+                    <Input  style={{border: "1px solid #179691",borderRadius: "4px"}} placeholder={"Контактный телефон"}></Input>
                 </Col>
                 <Col span={12}>
-                    <Input placeholder={"Электронная почта"}></Input>
+                    <Input style={{border: "1px solid #179691",borderRadius: "4px"}} placeholder={"Электронная почта"}></Input>
                 </Col>
             </Row>
-
             <Row style={{paddingTop: "16px"}}>
-                <Button>Разместить заявку</Button>
+                <Button shape="round" type={"text"} style={{background: "#179691", fontWeight: "600",
+                    fontSize:"15px", color:"white", width:"307px" }}>Разместить заявку</Button>
             </Row>
 
         </>
