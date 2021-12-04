@@ -31,6 +31,9 @@ function Login() {
             setUser(data.tokenAuth.user)
             toast.success("Успешная авторизация")
             localStorage.setItem("reloaded", false)
+            if (data.tokenAuth.user.type == 'startup') {
+                history.push("/my")
+            }
         }),
         onError: (error => {
             console.log(error)

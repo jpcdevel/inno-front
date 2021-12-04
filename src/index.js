@@ -29,7 +29,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
 
 const link = from([
   errorLink,
-  new HttpLink({ uri: 'https://inno-tim.herokuapp.com/graphql', credentials: 'include' }) // http://localhost:8000/graphql // https://lycnet4.herokuapp.com/graphql
+  new HttpLink({ uri: 'http://localhost:8000/graphql', credentials: 'include' }) // http://localhost:8000/graphql // https://inno-tim.herokuapp.com/graphql
 ])
 
 

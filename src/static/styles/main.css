@@ -24,7 +24,7 @@
 }
 
 body {
-    background-color: #EBEBEB;
+    background-color: #F5F5F5;
     overflow-x: hidden !important;
     height: 100%;
     margin: 0;
@@ -82,6 +82,8 @@ table {
 *::placeholder {
     font-family: MouseoSans-Regular;
 }
+
+
 
 .bold {
     font-family: MouseoSans-Bold;
@@ -310,6 +312,7 @@ table {
     color: #179691;
     font-family: MouseoSans-Medium;
     font-size: 16px;
+    padding-bottom: 2px;
 }
 
 .non_link {
@@ -343,12 +346,75 @@ table {
 
 .fileLink {
     color: #000;
-    font-family: Montserrat-Regular;
+    font-family: MouseoSans-Regular;
     text-underline: #000;
 }
 
 .fileLink:hover {
     color: #000;
+}
+
+.tabs {
+    display: flex;
+}
+
+.tab {
+    border: none;
+    background: #EDEDED;
+    padding: 6px 30px;
+    border-right: 1px solid #D4D4D4;
+    font-size: 16px;
+}
+
+.tab:first-child {
+    border-top-left-radius: 8px;
+}
+
+.tab:last-child {
+    border-right: none;
+    border-top-right-radius: 8px;
+}
+
+.tab_active {
+    background: #fff;
+    color: #179691;
+    font-family: MouseoSans-Medium;
+}
+
+.project_content {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    background: #fff;
+    padding: 20px 20px;
+}
+
+select {
+    min-height: 34px !important;
+}
+
+.rounded {
+    border-radius: 137px !important;
+}
+
+.galleryBtn {
+    background: #EDEDED;
+    border-radius: 4px;
+    border: none;
+    padding: 6px 12px;
+    font-size: 16px;
+    border: 1px solid transparent;
+    transition: .2s
+}
+
+.galleryBtn:hover {
+    border: 1px solid #179691;
+}
+
+.control_scores {
+    margin: 4px;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 @media(min-width: 1024px) {
@@ -358,5 +424,9 @@ table {
 
     .content {
         margin: 25px 90px;
+    }
+
+    .project_content {
+        padding: 20px 90px;
     }
 }

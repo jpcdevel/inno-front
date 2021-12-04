@@ -1,29 +1,28 @@
-import person from '../../static/images/img.png'
+import person from '../../static/images/person.png'
 
-function Person() {
+function Person({ who, fio, phone, email, tg, skype }) {
     return (
         <div className="person">
             <img width="100px" height="100px" src={person} alt="" style={{ objectFit: "cover", borderRadius: "50%" }} />
             <div>
-                <p>Контактное лицо</p>
-                <h4>Коваленко Александр</h4>
-                <p style={{ fontSize: "16px" }}>Капитан команды</p>
+                <p>{ who }</p>
+                <h4>{ fio }</h4>
             </div>
             <div>
                 <p>Телефон:</p>
-                <p style={{ fontSize: "18px" }}>+7 (800)-555-35-35</p>
+                <p style={{ fontSize: "18px" }}>{ phone }</p>
             </div>
             <div>
                 <p>Email:</p>
-                <p style={{ fontSize: "18px" }}>mail@mail.mail</p>
+                <p style={{ fontSize: "18px" }}>{ email }</p>
             </div>
             <div>
                 <p>Telegram:</p>
-                <p style={{ fontSize: "18px" }}>@tg</p>
+                <p style={{ fontSize: "18px" }}>{ tg }</p>
             </div>
             <div>
                 <p>Skype:</p>
-                <p style={{ fontSize: "18px" }}>@who_uses_skype?</p>
+                <p style={{ fontSize: "18px" }}>{ skype }</p>
             </div>
         </div>
     )
