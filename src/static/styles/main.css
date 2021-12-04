@@ -216,6 +216,7 @@ table {
 .filters {
     background: #fff;
     padding: 15px;
+    max-width: 400px;
 }
 
 .superior_filter {
