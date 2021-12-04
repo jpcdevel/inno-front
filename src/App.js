@@ -19,6 +19,7 @@ import ProtectedRoute from './utils/ProtectedRoute'
 import './static/styles/main.css'
 
 import { UserContext } from "./components/auth/AuthLayer";
+import Invitation from "./components/pages/Invitation";
 
 export const GlobalContext = React.createContext()
 
@@ -50,6 +51,7 @@ function App() {
                   />
 
 
+<<<<<<< HEAD
                   <div className="main rel">
                       {user.username && (
                         <Navbar />
@@ -84,6 +86,34 @@ function App() {
                               </Route>
                           </Switch>
                       </div>
+=======
+              <div className="main">
+                  {user.username && (
+                    <Navbar />
+                  )}
+                  <ScrollToTop />
+                  <div className="content">
+                      <Switch>
+                          <ProtectedRoute exact path="/">
+                              <Home />
+                          </ProtectedRoute>
+                          <ProtectedRoute path="/startup">
+                              <Startup />
+                          </ProtectedRoute>
+                          <ProtectedRoute path="/my">
+                              <Home />
+                          </ProtectedRoute>
+                          <ProtectedRoute path="/request">
+                              <Invitation />
+                          </ProtectedRoute>
+                          <Route path="/login">
+                              <Login />
+                          </Route>
+                          <Route path="/logout">
+                            <Logout />
+                          </Route>
+                      </Switch>
+>>>>>>> 05cdcd0d06b899829237fb491477b9f3e86c3050
                   </div>
             </Router>
           </GlobalContext.Provider>
