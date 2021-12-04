@@ -52,7 +52,7 @@ function StartupPreview({ type, startup }) {
                 <div className="d-flex mt-2" style={{ justifyContent: "space-between" }}>
                     <div className="d-flex align-items-center">
                         <p className="green">Категория:&nbsp;</p>
-                        <p>{ startup.category.name }</p>
+                        <p>{ startup.category && startup.category.name }</p>
                     </div>
                     <div className="d-flex align-items-center">
                         <p className="green">Команда:&nbsp;</p>
