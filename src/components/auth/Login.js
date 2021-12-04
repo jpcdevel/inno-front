@@ -46,66 +46,85 @@ function Login() {
     })
 
     return (
-        <div className="login_container">
-            {/* <div>
-                <h2 className="text-center">Кто вы?</h2>
-                <div className="d-flex">
-                    <div 
-                        className="login_card"
-                    >
-                        <h2>Стартапер</h2>  
+        <>
+            <div className="login_container">
+                {/* <div>
+                    <h2 className="text-center">Кто вы?</h2>
+                    <div className="d-flex">
+                        <div 
+                            className="login_card"
+                        >
+                            <h2>Стартапер</h2>  
+                        </div>
+                        <div 
+                            className="login_card"
+                            onClick={() => {
+                                setUser({...user, type: "expert"})
+                                localStorage.setItem("type", "expert")
+                                history.push("/")
+                            }}
+                        >
+                            <h2>Эксперт компании INNO-TIM</h2>  
+                        </div>
+                        <div 
+                            className="login_card"
+                            onClick={() => {
+                                setUser({...user, type: "director"})
+                                localStorage.setItem("type", "director")
+                                history.push("/")
+                            }}
+                        >
+                            <h2>Функциональный директор</h2>  
+                        </div>
                     </div>
-                    <div 
-                        className="login_card"
-                        onClick={() => {
-                            setUser({...user, type: "expert"})
-                            localStorage.setItem("type", "expert")
-                            history.push("/")
-                        }}
-                    >
-                        <h2>Эксперт компании INNO-TIM</h2>  
-                    </div>
-                    <div 
-                        className="login_card"
-                        onClick={() => {
-                            setUser({...user, type: "director"})
-                            localStorage.setItem("type", "director")
-                            history.push("/")
-                        }}
-                    >
-                        <h2>Функциональный директор</h2>  
+                </div> */}
+                <div>
+                <form onSubmit={(e) => {
+                        e.preventDefault()
+                        tokenAuth({
+                            variables: {username, password}
+                        })
+                    }}>
+                        <input
+                            type="text"
+                            className="defaultInput w-100"
+                            placeholder="Логин"
+                            onChange={(e) => setUsername(e.target.value)}
+                            required
+                        />
+                        <input
+                            type="password"
+                            className="defaultInput w-100 mt-2"
+                            placeholder="Пароль"
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                        <button
+                            type="submit"
+                            className="defaultBtn loginBtn mt-2"
+                            disabled={loading}
+                        >
+                            Войти в систему
+                        </button>
+                    </form>
+                    <div>
+                        <p>Стартапер:</p>
+                        <p>Логин: user1</p>
+                        <p>Пароль: pass</p>
+
+                        <p>Сотрудник ТИМ:</p>
+                        <p>Логин: user2</p>
+                        <p>Пароль: pass</p>
+
+                        <p>Функциональный директор:</p>
+                        <p>Логин: user3</p>
+                        <p>Пароль: pass</p>
                     </div>
                 </div>
-            </div> */}
-            <form onSubmit={(e) => {
-                    e.preventDefault()
-                    tokenAuth({
-                        variables: {username, password}
-                    })
-                }}>
-                    <input
-                        type="text"
-                        className="defaultInput w-100"
-                        placeholder="Логин"
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                    />
-                    <input
-                        type="password"
-                        className="defaultInput w-100 mt-2"
-                        placeholder="Пароль"
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                    <button
-                        type="submit"
-                        className="defaultBtn loginBtn mt-2"
-                        disabled={loading}
-                    >
-                        Войти в систему
-                    </button>
-                </form>
-        </div>  
+            </div>  
+
+            
+        </>
     )
 }
 
