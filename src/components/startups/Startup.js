@@ -39,7 +39,7 @@ function Startup() {
     const [loadOthers, { loading: loadingGetOthers }] = useLazyQuery(GET_ALL_USER_STARTUPS, {
         onCompleted: (data) => {
             console.log(data)
-            setStartups(data.getUserInfo.startups)
+            setStartups(data.getUserInfo.startup)
         },
         onError: (err) => {
             console.log(err)
